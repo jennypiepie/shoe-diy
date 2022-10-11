@@ -13,7 +13,7 @@ const Store = proxy({
     patch: '#ffffff'
   },
   screenshot:false,
-  imgUrl:''
+  imgUrls:[]
 })
 
 export default Store

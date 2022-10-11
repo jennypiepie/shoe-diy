@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
-import {  useFrame,useThree} from '@react-three/fiber'
+import { useFrame,useThree} from '@react-three/fiber'
 import { useGLTF} from '@react-three/drei'
 import { useSnapshot } from "valtio";
 import Store from '../stores/Store';
@@ -13,7 +13,7 @@ function Shoes(props) {
 
   if (snap.screenshot===true) {
     gl.render(scene, camera)
-    Store.imgUrl = gl.domElement.toDataURL()
+    Store.imgUrls.unshift(gl.domElement.toDataURL())
     Store.screenshot = false
   }
 

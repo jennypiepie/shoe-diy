@@ -7,6 +7,7 @@ import { useSnapshot } from "valtio";
 import Store from '../stores/Store';
 import Picker from '../components/Picker.jsx'
 import Shoes from '../components/Shoes.jsx'
+import Loading from '../components/Loading';
 
 function Customizer() {
     const snap = useSnapshot(Store)
@@ -16,8 +17,8 @@ function Customizer() {
     const isShow = snap.current ? 'block' : 'none' 
     const title = snap.current || 'shoes'
     const save = () => { 
-        Store.screenshot = true
-        setTimeout(()=> navigate('/works'),500)
+      Store.screenshot = true
+      setTimeout(() => navigate('/works'), 500)
     }
 
     return (
@@ -32,7 +33,7 @@ function Customizer() {
           <h1>Click to change the color of {title}</h1>
           <div className="product-canvas">
             <Canvas ref={canvasRef} shadows camera={{ position: [0, 0, 2], fov: 50 }}>
-              <Suspense fallback={null}>
+              <Suspense fallback={<Loading/>}>
                 <ambientLight intensity={0.7}/>
                 <spotLight intensity={0.3} angle={0.1}
                   penumbra={1} position={[10,15,10]} castShadow />
