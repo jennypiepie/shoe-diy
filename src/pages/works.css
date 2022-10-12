@@ -1,18 +1,24 @@
+.content {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
 .works-card{
-    width: 90%;
-    min-height: 100vh;
+    width: 70%;
     background: #a3d7dd;
+    border-radius: 10px;
+    margin: 10px;
     display: flex;
     padding: 10px;
-    flex-wrap: wrap;
 }
 
-.card-item{
-    background: #fff;
+.image{
+    background: #cceff3;
     width: 380px;
     height: 200px;
     margin: 10px;
-    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     overflow: hidden;
 }
 
@@ -22,6 +28,6 @@ img {
     transition: all 0.5s;
 }
 
-.card-item:hover img{
+.image:hover img{
     transform: scale(1.1);
 }

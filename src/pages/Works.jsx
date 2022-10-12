@@ -6,13 +6,15 @@ import './works.css'
 function Works() {
     const snap = useSnapshot(Store)
     return (
-        <div className='works-card'>
-            {snap.imgUrls.map((imgUrl)=>(
-                <div className="card-item">
+    <div className="content">
+        {snap.imgUrls.map((imgUrl) => (
+            <div className='works-card'>
+                <div className="image">
                     <img src={imgUrl} alt=''/>
                 </div>
-            ))}
-        </div>
+            </div>
+        ))}
+    </div>
     );
 }
 

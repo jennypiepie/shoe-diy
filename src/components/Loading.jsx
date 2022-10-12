@@ -2,9 +2,9 @@ import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 
 function Loading() {
-    const ref1 = useRef()
-    const ref2 = useRef()
-    const ref3 = useRef()
+  const ref1 = useRef()  
+  const ref2 = useRef()
+  const ref3 = useRef()
   useFrame((state) => {
     const t = state.clock.getElapsedTime()
     ref1.current.position.y = Math.sin(t * 3) / 3

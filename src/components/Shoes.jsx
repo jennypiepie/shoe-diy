@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { useFrame,useThree} from '@react-three/fiber'
-import { useGLTF} from '@react-three/drei'
+import { useGLTF, useTexture} from '@react-three/drei'
 import { useSnapshot } from "valtio";
 import Store from '../stores/Store';
 
@@ -10,6 +10,7 @@ function Shoes(props) {
   const { nodes, materials } = useGLTF('/shoe-draco.glb')
   const [hovered, set] = useState(null)
   const { gl, scene, camera } = useThree()
+  const [colorMap] =  useTexture(['/textures/texture8.jpg'])
 
   if (snap.screenshot===true) {
     gl.render(scene, camera)
@@ -34,6 +35,8 @@ function Shoes(props) {
     ref.current.position.y = (1 + Math.sin(t / 1.5)) / 10
   })
 
+
+  
   return (
     <group ref={ref} {...props} dispose={null}
       onPointerOver={(e) => { e.stopPropagation(); set(e.object.material.name)}}
@@ -42,7 +45,7 @@ function Shoes(props) {
       onPointerMissed={(e) => { Store.current = null }}
     >
       <mesh geometry={nodes.shoe.geometry} material={materials.laces} material-color={snap.items.laces} />
-      <mesh geometry={nodes.shoe_1.geometry} material={materials.mesh} material-color={snap.items.mesh}/>
+      <mesh geometry={nodes.shoe_1.geometry} material={materials.mesh} material-color={snap.items.mesh} material-map={colorMap} />
       <mesh geometry={nodes.shoe_2.geometry} material={materials.caps} material-color={snap.items.caps}/>
       <mesh geometry={nodes.shoe_3.geometry} material={materials.inner} material-color={snap.items.inner}/>
       <mesh geometry={nodes.shoe_4.geometry} material={materials.sole} material-color={snap.items.sole}/>
