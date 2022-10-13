@@ -20,7 +20,12 @@ function Shoes(props) {
   const { gl, scene, camera } = useThree()
   if (snap.screenshot===true) {
     gl.render(scene, camera)
-    Store.imgUrls.unshift(gl.domElement.toDataURL())
+    Store.works.unshift({
+      imgUrl: gl.domElement.toDataURL(),
+      color: snap.color,
+      pattern: snap.pattern.body,
+      material:snap.material.body
+    })
     Store.screenshot = false
   }
 
@@ -33,13 +38,15 @@ function Shoes(props) {
     }
   }, [hovered])
 
-  // useFrame((state) => {
-  //   const t = state.clock.getElapsedTime()
-  //   ref.current.rotation.z = -0.2 - (1 + Math.sin(t / 1.5)) / 20
-  //   ref.current.rotation.x = Math.cos(t / 4) / 8
-  //   ref.current.rotation.y = Math.sin(t / 4) / 8
-  //   ref.current.position.y = (1 + Math.sin(t / 1.5)) / 10
-  // })
+  useFrame((state) => {
+    if (snap.animate) {
+      const t = state.clock.getElapsedTime()
+      ref.current.rotation.z = -0.2 - (1 + Math.sin(t / 1.5)) / 20
+      ref.current.rotation.x = Math.cos(t / 4) / 8
+      ref.current.rotation.y = Math.sin(t / 4) / 8
+      ref.current.position.y = (1 + Math.sin(t / 1.5)) / 10
+    }
+  })
 
 
   return (

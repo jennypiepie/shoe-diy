@@ -11,6 +11,10 @@ import leather from '../assets/textures/leather.jpg'
 
 const Store = proxy({
   current: 'body',
+  screenshot: false,
+  animate:true,
+  imgUrls: [],
+  works: [],
   color: {
     laces: '#ffffff',
     body: '#ffffff',
@@ -31,7 +35,7 @@ const Store = proxy({
     color: ['#ffffff','#000000','#70cccc']
   },
   body:{
-    color:["#ffffff", "#30432d", "#e9b229", "#5b4691", "#c7e3e9","#063a78", "#d6d3c6", "#74433f","#063a78", "#d6d3c6", "#db858f"],
+    color:["#ffffff", "#30432d", "#e9b229", "#5b4691", "#c7e3e9","#063a78","#e9b229"],
     pattern:[empty,texture1,texture2,texture3,texture4],
     material: [empty,denmin,fabric,leather]
   },
@@ -52,9 +56,7 @@ const Store = proxy({
   },
   patch: {
     color: ["#d6d3c6", "#74433f"]
-  },
-  screenshot:false,
-  imgUrls:[]
+  }
 })
 
 export default Store

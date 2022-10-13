@@ -11,14 +11,15 @@
 .title{
     width: 100px;
     position: absolute;
-    left: 20px;
+    left: 40px;
+    bottom: 90px;
     font-weight: 700;
-    font-size: 45px;
+    font-size: 50px;
 }
 
 .options {
     position: absolute;
-    right: 75%;
+    right: 65%;
     width: 180px;
     height: 500px;
     opacity: 0.8;
@@ -56,13 +57,13 @@ svg {
 }
 
 .card {
-    width: 80%;
+    width: 70%;
     height: 90vh;
     position: relative;
     border-radius: 13px;
     box-shadow: 20px 40px 33px 10px rgba(0, 0, 0, 0.3);
     padding: 20px;
-    margin-right: 20px;
+    margin-right: 30px;
     background-color: #a3d7dd;
 }
 
@@ -79,7 +80,6 @@ svg {
     width: 100px;
     height: 30px;
     color: #fff;
-    margin-top: 10px;
     position: absolute;
     bottom: 20px;
     right: 20px;
@@ -120,6 +120,23 @@ svg {
     right: 0;
 }
 
+.animate{
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    position: absolute;
+    bottom: 100px;
+    right: 40px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    font-weight: 700;
+    text-align: center;
+    background: #f3a246;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
 input {
     box-sizing: border-box;
     width: 120px;
@@ -137,20 +154,24 @@ input {
 }
 
 .selector {
+    position: absolute;
     width:80%;
-    height: 120px;
-    margin-top: 40px;
+    height: 20%;
     display: flex;
-    overflow: hidden;
     align-items: flex-end;
+    overflow: auto;
+    left: 40px;
+    bottom: 30px;
 }
 
 .selector-item:first-child{
     background: #fff;
 }
+
 .selector-item {
     height: 90%;
     width: 10%;
+    flex-shrink: 0;
     transition: height 0.5s;
 }
 

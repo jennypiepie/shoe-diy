@@ -7,11 +7,17 @@ function Works() {
     const snap = useSnapshot(Store)
     return (
     <div className="content">
-        {snap.imgUrls.map((imgUrl) => (
+        {snap.works.map((work) => (
             <div className='works-card'>
                 <div className="image">
-                    <img src={imgUrl} alt=''/>
+                    <img src={work.imgUrl} alt=''/>
                 </div>
+                {Object.keys(work.color).map((key) =>
+                (
+                    <li style={{background:work.color[key]}}>{key}</li>
+                )
+                )}
+                <div className="pattern"><img src={work.pattern} alt="" /></div>
             </div>
         ))}
     </div>
