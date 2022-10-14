@@ -9,13 +9,23 @@ function Shoes(props) {
   const ref = useRef()
   const snap = useSnapshot(Store)
   const { nodes, materials } = useGLTF('/shoe-draco.glb')
+  // console.log(materials);
   const [hovered, set] = useState(null)
-  const colorMap = useTexture(Store.pattern.body)
+  
+
   const material = {
     'leather': leather,
     'denmin': denmin,
     'fabric':fabric
   }
+
+  const getName = (url)=>{
+    const name = url.split('/').pop().split('.')[0]
+    return name
+  }
+
+  const materialName = getName(snap.material.body)
+  const colorMap = useTexture(Store.pattern.body)
 
   const { gl, scene, camera } = useThree()
   if (snap.screenshot===true) {
@@ -57,7 +67,7 @@ function Shoes(props) {
       // onPointerMissed={(e) => { Store.current = 'body' }}
     >
       <mesh geometry={nodes.shoe.geometry} material={materials.laces} material-color={snap.color.laces} />
-      <mesh geometry={nodes.shoe_1.geometry} material={material[snap.material.body]||materials.mesh} 
+      <mesh geometry={nodes.shoe_1.geometry} material={material[materialName]||materials.mesh} 
         material-color={snap.color.body} material-map={colorMap} />
       <mesh geometry={nodes.shoe_2.geometry} material={materials.caps} material-color={snap.color.caps}/>
       <mesh geometry={nodes.shoe_3.geometry} material={materials.inner} material-color={snap.color.inner}/>

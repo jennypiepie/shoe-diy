@@ -20,11 +20,6 @@ function Customizer() {
     Store.screenshot = true
     setTimeout(() => navigate('/works'), 500)
   }
-  
-  const getName = (url)=>{
-    const name = url.split('/').pop().split('.')[0]
-    return name
-  }
 
   useEffect(() => {
     setActive(snap.current!=='body'?'color':active)
@@ -56,31 +51,29 @@ function Customizer() {
                   penumbra={1} position={[10,15,10]} castShadow />
                 <Shoes />
                 <Environment preset="city" />
-                <ContactShadows position={[0, -0.8, 0]} opacity={0.5} scale={20} blur={1.5} far={0.8} />
+                {/* <ContactShadows position={[0, -0.8, 0]} opacity={0.5} scale={20} blur={1.5} far={0.8} /> */}
               </Suspense>
               <OrbitControls enablePan={false} enableZoom={true} enableRotate={true} />
             </Canvas>
           </div>
           <div className="selector">
             {active === 'color' ?
-              Store[snap.current][active].map((item,index) =>
+              Store[snap.current][active].map((item) =>
               (<div className="selector-item"
                   style={{ background:item}}
                   onClick={() => Store[active][snap.current] = item}
                 ></div>))
               :
-              Store.body[active].map((item,index) =>
+              Store.body[active].map((item) =>
               (<div className="selector-item"
                   style={{ backgroundImage: `url(${item})`,backgroundSize: '100%,100%'}}
-                  onClick={() => {
-                    Store[active].body = active === 'pattern' ? item : getName(item);
-                    setRe(re + 1)
-                  }}
+                  onClick={() => {Store[active].body = item;setRe(re + 1)}}
                 ></div>))
-           }
+            }
           </div>
           <button className='animate'
-            onClick={() => Store.animate = !snap.animate}>
+            onClick={() => Store.animate = !snap.animate}
+            style={{borderRadius:snap.animate ?'5px':'25px'}}>
             <span>{snap.animate ? 'Pause' : 'Play'}</span>
           </button>
           <button className='save' onClick={save}><span>SAVE</span></button>

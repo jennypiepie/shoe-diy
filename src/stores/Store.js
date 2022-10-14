@@ -1,5 +1,6 @@
 import { proxy } from "valtio";
 import empty from '../assets/textures/Empty.png'
+
 import texture1 from '../assets/textures/texture1.jpg'
 import texture2 from '../assets/textures/texture2.jpg'
 import texture3 from '../assets/textures/texture3.jpg'
@@ -26,10 +27,10 @@ const Store = proxy({
     patch: '#ffffff'
   },
   pattern: {
-    body: empty,
+    body: empty
   },
   material: {
-    body:''
+    body:empty
   },
   laces: {
     color: ['#ffffff','#000000','#70cccc']
