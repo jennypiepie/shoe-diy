@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }
 .App {
   display: flex;
@@ -52,13 +54,13 @@
   left: 50%;
   transform: translate(-50%,-50%);
   height: 300px;
-  pointer-events: none;
-  transition: all 0.5;
+  pointer-events: none; /* 鼠标事件穿透 */
+  transition: all 0.5s;
 }
 
 .shoes-card:hover img{
-  left: 72%;
-  height: 500px;
+  left: 70%;
+  height: 400px;
 }
 
 .intro{

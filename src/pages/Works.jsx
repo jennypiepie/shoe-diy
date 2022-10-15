@@ -1,4 +1,4 @@
-import React from 'react';
+import {useRef} from 'react';
 import { useSnapshot } from "valtio";
 import Store from '../stores/Store';
 import './works.css'
@@ -6,15 +6,12 @@ import './works.css'
 
 function Works() {
     const snap = useSnapshot(Store)
+    const ref = useRef(null)
 
-    // function download(url) {
-    //     var oA = document.createElement("a");
-    //     oA.download = 'shoes';// 设置下载的文件名，默认是'下载'
-    //     oA.href = snap.works[0].imgUrl;
-    //     document.body.appendChild(oA);
-    //     oA.click();
-    //     oA.remove(); // 下载之后把创建的元素删除
-    // }
+    function download(url) {
+        ref.current.download = 'shoes';
+        ref.current.href = snap.works[0].imgUrl;
+    }
     
     const getName = (url)=>{
         const name = url.split('/').pop().split('.')[0]
@@ -39,8 +36,13 @@ function Works() {
                     )}
                     <div className="symbol">
                         <div className="symbol-name">pattern|material</div>
-                        <div className="symbol-content"><img src={getName(work.material)!=='empty'?work.material:work.pattern} alt="" /></div>
+                        <div className="symbol-content">
+                            <img src={getName(work.material) !== 'empty' ? work.material : work.pattern} alt="" />
+                        </div>
                     </div>
+                    <a className="download" ref = {ref} onClick={download}>
+                        <img src='/imgs/download.png' alt='download'></img>
+                    </a>
                 </div>
             </div>
         ))}

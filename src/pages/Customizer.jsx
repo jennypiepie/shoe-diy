@@ -24,7 +24,6 @@ function Customizer() {
 
   useEffect(() => {
     Store.active = snap.current !== 'body' ? 'color' : snap.active
-    console.log(snap.active);
   },[snap.current])
 
     return (
@@ -79,7 +78,11 @@ function Customizer() {
             style={{borderRadius:snap.animate ?'10px':'25px',backgroundColor:snap.animate?'#d63928':'#44d26e'}}>
             <span>{snap.animate ? 'Pause' : 'Play'}</span>
           </button>
-          <button className='save' style={{visibility:snap.active==='material'?'visible':'hidden'}} onClick={save}><span>SAVE</span></button>
+          <button className='save'
+            style={{ display: snap.active === 'material' ? 'inline-block' : 'none' }}
+            onClick={save}>
+            <span>SAVE</span>
+          </button>
         </div>
       </div>
     );
