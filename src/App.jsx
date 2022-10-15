@@ -11,9 +11,9 @@ function App() {
         <div className="intro">
           <h2>Shoes DIY</h2>
           <p>description description description description description description description description description description</p>
-          <button onClick={() => { navigate('/customizer'); console.log(111);}}>DIY Now</button>
+          <button onClick={() => navigate('/customizer')}>DIY Now</button>
         </div>
-        <img src='/imgs/shoes.png'></img>
+        <img src='/imgs/shoes.png' alt= ''></img>
       </div>
     </div>
   );

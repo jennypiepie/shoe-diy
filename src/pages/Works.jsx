@@ -16,6 +16,11 @@ function Works() {
     //     oA.remove(); // 下载之后把创建的元素删除
     // }
     
+    const getName = (url)=>{
+        const name = url.split('/').pop().split('.')[0]
+        return name
+    }
+    
     return (
     <div className="content">
         {snap.works.map((work) => (
@@ -25,15 +30,17 @@ function Works() {
                 </div>
                 <div className="symbols">
                     {Object.keys(work.color).map((key) =>
-                    (
-                        <li className="symbol" style={{background:work.color[key]}}>{key}</li>
+                    (   
+                      <div className='symbol'>
+                        <div className="symbol-name">{key}</div>
+                        <div className="symbol-content" style={{background:work.color[key]}}></div>
+                      </div>
                     )
                     )}
-                    <div className="wrap" style={{width:'100%'}}></div>
-                    <div className="symbol"><img src={work.pattern} alt="" /></div>
-                    <div className="wrap" style={{width:'100%'}}></div>
-                    <div className="symbol"><img src={work.material} alt="" /></div>
-                    {/* <div className="button" onClick={download}>111</div> */}
+                    <div className="symbol">
+                        <div className="symbol-name">pattern|material</div>
+                        <div className="symbol-content"><img src={getName(work.material)!=='empty'?work.material:work.pattern} alt="" /></div>
+                    </div>
                 </div>
             </div>
         ))}

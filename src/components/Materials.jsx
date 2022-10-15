@@ -1,9 +1,9 @@
 import * as THREE from 'three'
-import empty from '../assets/textures/Empty.png'
+// import empty from '../assets/textures/empty.png'
 
 const textureLoader = new THREE.TextureLoader()
 
-const colorTexture = textureLoader.load(empty)
+// const colorTexture = textureLoader.load(empty)
 
 const leatherColorTexture = textureLoader.load('/materials/leather/color.jpg')
 const leatherNormalTexture = textureLoader.load('/materials/leather/normal.jpg')
@@ -22,7 +22,7 @@ const fabricAOTexture = textureLoader.load('/materials/fabric/ao.jpg')
 
 export const leather = new THREE.MeshStandardMaterial({
     name:'body',
-    map: colorTexture,
+    map: leatherColorTexture,
     normalMap: leatherNormalTexture,
     roughnessMap: leatherRoughnessTexture,
     aoMap:leatherAOTexture,
@@ -31,7 +31,7 @@ export const leather = new THREE.MeshStandardMaterial({
 
 export const denmin = new THREE.MeshStandardMaterial({
     name:'body',
-    map: colorTexture,
+    map: denminColorTexture,
     normalMap: denminNormalTexture,
     roughnessMap: denminRoughnessTexture,
     aoMap:denminAOTexture,
@@ -40,7 +40,7 @@ export const denmin = new THREE.MeshStandardMaterial({
 
 export const fabric = new THREE.MeshStandardMaterial({
     name:'body',
-    map: colorTexture,
+    map: fabricColorTexture,
     normalMap: fabricNormalTexture,
     roughnessMap: fabricRoughnessTexture,
     aoMap:fabricAOTexture,

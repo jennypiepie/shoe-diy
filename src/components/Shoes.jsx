@@ -4,16 +4,16 @@ import { useGLTF, useTexture} from '@react-three/drei'
 import { useSnapshot } from "valtio";
 import Store from '../stores/Store';
 import { leather, denmin, fabric } from './Materials'
+import * as THREE from 'three'
 
 function Shoes(props) {
   const ref = useRef()
   const snap = useSnapshot(Store)
   const { nodes, materials } = useGLTF('/shoe-draco.glb')
-  // console.log(materials);
   const [hovered, set] = useState(null)
-  
 
-  const material = {
+  const materialObj = {
+    // 'empty': materials.mesh,
     'leather': leather,
     'denmin': denmin,
     'fabric':fabric
@@ -25,8 +25,18 @@ function Shoes(props) {
   }
 
   const materialName = getName(snap.material.body)
-  const colorMap = useTexture(Store.pattern.body)
+  
+  const colorMap = useTexture(snap.pattern.body)
+  const patternMaterial = materials.mesh
+  patternMaterial.map = colorMap
 
+  const colorMaterial = materials.mesh
+  colorMaterial.color = new THREE.Color(snap.color.body)
+
+  const material = snap.active === 'color' ? colorMaterial :
+    snap.active === 'pattern' ? patternMaterial :
+    materialObj[materialName] || materials.mesh
+  
   const { gl, scene, camera } = useThree()
   if (snap.screenshot===true) {
     gl.render(scene, camera)
@@ -67,8 +77,7 @@ function Shoes(props) {
       // onPointerMissed={(e) => { Store.current = 'body' }}
     >
       <mesh geometry={nodes.shoe.geometry} material={materials.laces} material-color={snap.color.laces} />
-      <mesh geometry={nodes.shoe_1.geometry} material={material[materialName]||materials.mesh} 
-        material-color={snap.color.body} material-map={colorMap} />
+      <mesh geometry={nodes.shoe_1.geometry} material={material}  />
       <mesh geometry={nodes.shoe_2.geometry} material={materials.caps} material-color={snap.color.caps}/>
       <mesh geometry={nodes.shoe_3.geometry} material={materials.inner} material-color={snap.color.inner}/>
       <mesh geometry={nodes.shoe_4.geometry} material={materials.sole} material-color={snap.color.sole}/>
@@ -78,5 +87,6 @@ function Shoes(props) {
     </group>
   )
 }
+
 
 export default Shoes;

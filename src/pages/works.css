@@ -7,7 +7,7 @@
 }
 .works-card{
     width: 70%;
-    background: #a3d7dd;
+    background: #aee3e9;
     border-radius: 10px;
     margin: 8px;
     display: flex;
@@ -40,43 +40,19 @@ img {
     flex-wrap: wrap;
 }
 
-.symbols li{
-    list-style: none;
+.symbol {
+    width: 20%;
+    color: #fff;
     text-align: center;
-    line-height: 50px;
     font-weight: 700;
 }
 
-.symbol {
+.symbol-content {
     width: 50px;
     height: 50px;
     border-radius: 25px;
-    margin: 2px 10px 2px 0;
     background: #a3d7dd;
     overflow: hidden;
-    position: relative;
     opacity: 0.9;
-    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.1),15px 25px 10px rgba(0, 0, 0, 0.1) ,15px 20px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.1),10px 10px 10px rgba(0, 0, 0, 0.1) ,10px 10px 10px rgba(0, 0, 0, 0.1);
 }
-
-/* .symbol::before{
-    content: '';
-    position: absolute;
-    top: 9px;
-    left: 10px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #d6f7fa;
-}
-
-.symbol::after {
-    content: '';
-    position: absolute;
-    top: 6px;
-    left: 20px;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: #d6f7fa;
-} */

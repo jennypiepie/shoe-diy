@@ -1,10 +1,19 @@
 import { proxy } from "valtio";
-import empty from '../assets/textures/Empty.png'
+import empty from '../assets/textures/empty.png'
+// import empty from '../assets/textures/empty.jpg'
 
-import texture1 from '../assets/textures/texture1.jpg'
-import texture2 from '../assets/textures/texture2.jpg'
-import texture3 from '../assets/textures/texture3.jpg'
-import texture4 from '../assets/textures/texture4.jpg'
+
+import texture1 from '../assets/textures/texture1.png'
+import texture2 from '../assets/textures/texture2.png'
+import texture3 from '../assets/textures/texture3.png'
+import texture4 from '../assets/textures/texture4.png'
+import texture5 from '../assets/textures/texture5.png'
+import texture6 from '../assets/textures/texture6.png'
+import texture7 from '../assets/textures/texture7.png'
+import texture8 from '../assets/textures/texture8.png'
+import texture9 from '../assets/textures/texture9.png'
+import texture10 from '../assets/textures/texture10.png'
+
 
 import denmin from '../assets/textures/denmin.jpg'
 import fabric from '../assets/textures/fabric.jpg'
@@ -13,9 +22,10 @@ import leather from '../assets/textures/leather.jpg'
 const Store = proxy({
   current: 'body',
   screenshot: false,
-  animate:true,
+  animate:false,
   imgUrls: [],
   works: [],
+  active:'color',
   color: {
     laces: '#ffffff',
     body: '#ffffff',
@@ -33,30 +43,30 @@ const Store = proxy({
     body:empty
   },
   laces: {
-    color: ['#ffffff','#000000','#70cccc']
+    color: ["#ffffff","#000000","#D84040", "#FFB9B9", "#E77933", "#FDF772", "#1C7A1F","#A6E9AF","#B3EEE5","#70cccc","#309AC2", "#8FA3DC", "#734F7A", "#F24473", "#B7B7B7","#93cdeb"]
   },
   body:{
-    color:["#ffffff", "#30432d", "#e9b229", "#5b4691", "#c7e3e9","#063a78","#e9b229"],
-    pattern:[empty,texture1,texture2,texture3,texture4],
+    color:["#ffffff","#000000","#D84040", "#FFB9B9", "#E77933", "#FDF772", "#1C7A1F","#A6E9AF","#B3EEE5","#70cccc","#309AC2", "#8FA3DC", "#734F7A", "#F24473", "#B7B7B7","#93cdeb"],
+    pattern:[empty,texture1,texture2,texture3,texture4,texture5,texture6,texture7,texture8,texture9,texture10],
     material: [empty,denmin,fabric,leather]
   },
   caps: {
-    color: ["#db858f", "#30432d", "#e9b229", "#5b4691"]
+    color: ["#ffffff","#000000","#D84040", "#FFB9B9", "#E77933", "#FDF772", "#1C7A1F","#A6E9AF","#B3EEE5","#70cccc","#309AC2", "#8FA3DC", "#734F7A", "#F24473", "#B7B7B7","#93cdeb"]
   },
   inner: {
-    color: ["#c7e3e9", "#063a78"]
+    color: ["#ffffff","#000000","#D84040", "#FFB9B9", "#E77933", "#FDF772", "#1C7A1F","#A6E9AF","#B3EEE5","#70cccc","#309AC2", "#8FA3DC", "#734F7A", "#F24473", "#B7B7B7","#93cdeb"]
   },
   sole: {
-    color: ["#db858f"]
+    color: ["#000000","#F1E1E1","#767676","#BFB686","#FAFF98"]
   },
   stripes: {
-    color: ["#d6d3c6", "#74433f"]
+    color: ["#ffffff","#000000","#D84040", "#FFB9B9", "#E77933", "#FDF772", "#1C7A1F","#A6E9AF","#B3EEE5","#70cccc","#309AC2", "#8FA3DC", "#734F7A", "#F24473", "#B7B7B7","#93cdeb"]
   },
   band: {
-    color: ["#d6d3c6", "#74433f"]
+    color: ["#ffffff","#000000","#D84040", "#FFB9B9", "#E77933", "#FDF772", "#1C7A1F","#A6E9AF","#B3EEE5","#70cccc","#309AC2", "#8FA3DC", "#734F7A", "#F24473", "#B7B7B7","#93cdeb"]
   },
   patch: {
-    color: ["#d6d3c6", "#74433f"]
+    color: ["#ffffff","#000000","#D84040", "#FFB9B9", "#E77933", "#FDF772", "#1C7A1F","#A6E9AF","#B3EEE5","#70cccc","#309AC2", "#8FA3DC", "#734F7A", "#F24473", "#B7B7B7","#93cdeb"]
   }
 })
 
