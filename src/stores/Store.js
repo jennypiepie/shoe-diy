@@ -1,23 +1,21 @@
 import { proxy } from "valtio";
-import empty from '../assets/textures/empty.png'
-// import empty from '../assets/textures/empty.jpg'
 
 
-import texture1 from '../assets/textures/texture1.png'
-import texture2 from '../assets/textures/texture2.png'
-import texture3 from '../assets/textures/texture3.png'
-import texture4 from '../assets/textures/texture4.png'
-import texture5 from '../assets/textures/texture5.png'
-import texture6 from '../assets/textures/texture6.png'
-import texture7 from '../assets/textures/texture7.png'
-import texture8 from '../assets/textures/texture8.png'
-import texture9 from '../assets/textures/texture9.png'
-import texture10 from '../assets/textures/texture10.png'
+const empty = '/textures/empty.png'
+const texture1 = '/textures/texture1.png'
+const texture2 = '/textures/texture2.png'
+const texture3 = '/textures/texture3.png'
+const texture4 = '/textures/texture4.png'
+const texture5 = '/textures/texture5.png'
+const texture6 = '/textures/texture6.png'
+const texture7 = '/textures/texture7.png'
+const texture8 = '/textures/texture8.png'
+const texture9 = '/textures/texture9.png'
+const texture10 = '/textures/texture10.png'
 
-
-import denmin from '../assets/textures/denmin.jpg'
-import fabric from '../assets/textures/fabric.jpg'
-import leather from '../assets/textures/leather.jpg'
+const denmin = '/textures/denmin.jpg'
+const fabric = '/textures/fabric.jpg'
+const leather = '/textures/leather.jpg'
 
 const Store = proxy({
   current: 'body',
