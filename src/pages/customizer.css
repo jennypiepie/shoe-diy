@@ -95,7 +95,7 @@ svg {
 
 .save span {
     position: relative;
-    transition: 0.5s;
+    transition: all 0.5s;
 }
 
 .save span::after {

@@ -1,10 +1,12 @@
 import {useRef} from 'react';
 import { useSnapshot } from "valtio";
 import Store from '../stores/Store';
+import { useNavigate } from 'react-router-dom';
 import './works.css'
   
 
 function Works() {
+    const navigate = useNavigate()
     const snap = useSnapshot(Store)
     const ref = useRef(null)
 
@@ -46,6 +48,9 @@ function Works() {
                 </div>
             </div>
         ))}
+        <button className='back' onClick={() => navigate('/customizer')}>
+            <span>ONE MORE</span>
+        </button>
     </div>
     );
 }
