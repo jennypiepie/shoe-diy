@@ -19,6 +19,8 @@ const fabricColorTexture = textureLoader.load('/materials/fabric/color.jpg')
 const fabricNormalTexture = textureLoader.load('/materials/fabric/normal.jpg')
 const fabricRoughnessTexture = textureLoader.load('/materials/fabric/roughness.jpg')
 const fabricAOTexture = textureLoader.load('/materials/fabric/ao.jpg')
+fabricColorTexture.wrapS = fabricColorTexture.wrapT = THREE.RepeatWrapping;
+fabricColorTexture.repeat.set( 2, 2 );
 
 export const leather = new THREE.MeshStandardMaterial({
     name:'body',
