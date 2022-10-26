@@ -111,3 +111,16 @@ html {
   background: #000;
   color: #fff;
 }
+
+@media(orientation:portrait) {
+  .shoes-card{
+    width: 80%;
+  }
+  .shoes-card img{
+    height: 200px;
+  }
+  .shoes-card:hover img {
+    left: 70%;
+    height: 280px;
+  }
+}
