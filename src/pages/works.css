@@ -70,8 +70,8 @@
 
 .download {
     position: absolute;
-    right: 10px;
-    bottom: 10px;
+    right: 5px;
+    bottom: 5px;
     width: 60px;
     height: 60px;
 }
@@ -88,15 +88,15 @@
 
 .back{
     position: absolute;
-    top: 30px;
-    left: 82px;
+    top: 20px;
+    left: 0;
     width: 100px;
     height: 40px;
     color: #1c9f32;
     background: radial-gradient(#80eb92, #ecf3cf);
     box-shadow: 0 10px 100px 0 rgba(0, 0, 0, 0.2);
     border: none;
-    border-radius: 20px 0 0 20px;
+    border-radius: 0 20px 20px 0;
     font-weight: 900;
     cursor: pointer;
     transition: all 0.5s;
@@ -104,4 +104,16 @@
 
 .back:hover{
     color: #11aa83;
+}
+
+@media(orientation:portrait) {
+    .works-card{
+        width: 90%;
+        flex-direction: column;
+        font-size: x-small;
+    }
+    .symbol-content{
+        width: 40px;
+        height: 40px;
+    }
 }

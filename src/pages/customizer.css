@@ -136,21 +136,6 @@ svg {
     transition: all 0.5s;
 }
 
-input {
-    box-sizing: border-box;
-    width: 120px;
-    margin: 10px 10px 0;
-    padding: 4px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background: #eee;
-    outline: none;
-    font: inherit;
-    text-transform: uppercase;
-    text-align: center;
-    border-left: 1.8em solid #000;
-    padding-left: 0.5em;
-}
 
 .selector {
     position: absolute;
@@ -200,3 +185,45 @@ input {
     background: #ededed;
     border-radius: 10px;
   }
+
+@media(orientation:portrait){
+    .wrapper{
+        flex-direction: column;
+    }
+    .title {
+        top: 0;
+        width: 100%;
+
+    }
+    .options{
+        right: -130px;
+        top:160px;
+    }
+    .card{
+        position: absolute;
+        top: 340px;
+        height: 40vh;
+        width: 80%;
+        margin-right: 0;
+    }
+    .product-canvas{
+        margin-top: 0;
+    }
+    .selector{
+        width: 70%;
+        bottom: 20px;
+    }
+    .animate{
+        right: 5px;
+        bottom: 50px;
+        width: 35px;
+        height: 35px;
+        font-size: x-small;
+    }
+    .save{
+        right: 5px;
+        width: 60px;
+        height: 20px;
+        font-size: x-small;
+    }
+}
